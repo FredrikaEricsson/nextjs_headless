@@ -1,0 +1,15 @@
+.menuWrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  border: 1px solid red;
+}
+.menuItems {
+  display: flex;
+  width: 808px;
+  list-style: none;
+  justify-content: space-evenly;
+}

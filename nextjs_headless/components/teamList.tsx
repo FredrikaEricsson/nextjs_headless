@@ -14,7 +14,6 @@ interface ITeamProps {
 }
 
 const TeamList = ({ teamData }: ITeamProps) => {
-  console.log(teamData);
   return (
     <ul>
       {teamData.map((teamItem) => (
