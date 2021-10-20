@@ -1,4 +1,5 @@
 import { gql } from "@apollo/client";
+import { NextPage } from "next";
 import { client } from "../lib/apolloClient";
 
 interface IHero {
@@ -19,10 +20,10 @@ const GET_HERO_TITLE = gql`
   }
 `;
 
-export default function Hero({ hero }: any) {
+const Hero: NextPage = ({ hero }: any) => {
   console.log(hero);
   return <></>;
-}
+};
 
 export async function getStaticProps() {
   const response = await client.query({
@@ -35,3 +36,5 @@ export async function getStaticProps() {
     },
   };
 }
+
+export default Hero;
