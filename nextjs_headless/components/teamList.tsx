@@ -1,4 +1,5 @@
 import TeamItem from "./teamItem";
+import styles from "../styles/Team.module.css";
 
 interface ITeamData {
   id: string;
@@ -15,16 +16,18 @@ interface ITeamProps {
 
 const TeamList = ({ teamData }: ITeamProps) => {
   return (
-    <ul>
-      {teamData
-        .slice()
-        .reverse()
-        .map((teamItem) => (
-          <li key={teamItem.id}>
-            <TeamItem teamItem={teamItem}></TeamItem>
-          </li>
-        ))}
-    </ul>
+    <div className={styles.listWrapper}>
+      <ul>
+        {teamData
+          .slice()
+          .reverse()
+          .map((teamItem) => (
+            <li key={teamItem.id} className={styles.itemWrapper}>
+              <TeamItem teamItem={teamItem}></TeamItem>
+            </li>
+          ))}
+      </ul>
+    </div>
   );
 };
 
