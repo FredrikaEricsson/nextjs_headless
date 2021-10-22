@@ -13,7 +13,7 @@ const Menu = () => {
           </Link>
         </div>
         <ul className={styles.menuItems}>
-          <li>Nyheter</li>
+          <Link href='/nyheter-och-press'>Nyheter</Link>
           <li>Tjänster</li>
           <Link href='/team'>Team</Link>
           <li>Case</li>
