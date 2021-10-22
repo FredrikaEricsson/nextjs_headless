@@ -4,6 +4,7 @@ import React from "react";
 import { client } from "../lib/apolloClient";
 import TeamList from "../components/teamList";
 import Header from "../components/header";
+import styles from "../styles/Team.module.css";
 
 interface ITeamData {
   id: string;
@@ -59,7 +60,9 @@ const TeamPage: NextPage<ITeamProps> = ({ teamData, heroData }) => {
   return (
     <>
       <Header heroData={heroData}></Header>
-      <TeamList teamData={teamData}></TeamList>
+      <div className={styles.pageWrapper}>
+        <TeamList teamData={teamData}></TeamList>
+      </div>
     </>
   );
 };

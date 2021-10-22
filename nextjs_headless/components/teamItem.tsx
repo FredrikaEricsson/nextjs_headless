@@ -1,3 +1,5 @@
+import styles from "../styles/Team.module.css";
+
 interface ITeamData {
   id: string;
   title: string;
@@ -15,9 +17,13 @@ const TeamItem = ({ teamItem }: ITeamDataProps) => {
   const regex = /(<([^>]+)>)/gi;
   return (
     <>
-      <h1>{teamItem.title}</h1>
-      <p>{teamItem.bodyText.replace(regex, "")}</p>
-      <img src={teamItem.image.sourceUrl} alt='' width='100px' />
+      <div className={styles.textWrapper}>
+        <h1>{teamItem.title}</h1>
+        <span>{teamItem.bodyText.replace(regex, "")}</span>
+      </div>
+      <div className={styles.imageWrapper}>
+        <img src={teamItem.image.sourceUrl} alt='' />
+      </div>
     </>
   );
 };
