@@ -14,14 +14,16 @@ interface ITeamProps {
 }
 
 const TeamList = ({ teamData }: ITeamProps) => {
-  console.log(teamData);
   return (
     <ul>
-      {teamData.map((teamItem) => (
-        <li key={teamItem.id}>
-          <TeamItem teamItem={teamItem}></TeamItem>
-        </li>
-      ))}
+      {teamData
+        .slice()
+        .reverse()
+        .map((teamItem) => (
+          <li key={teamItem.id}>
+            <TeamItem teamItem={teamItem}></TeamItem>
+          </li>
+        ))}
     </ul>
   );
 };
