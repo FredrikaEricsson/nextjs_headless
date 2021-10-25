@@ -1,11 +1,12 @@
 import { gql } from "@apollo/client";
-import { NextPage } from "next";
+
 import { client } from "../lib/apolloClient";
 
-interface IHero {
-  hero: any;
+interface IHeroData {
+  heroData: {
+    title: string;
+  };
 }
-
 const GET_HERO_TITLE = gql`
   query getStartPageHeroTitle {
     pagesTaxonomies(where: { name: "StartPage" }) {
@@ -20,9 +21,12 @@ const GET_HERO_TITLE = gql`
   }
 `;
 
-const Hero: NextPage = ({ hero }: any) => {
-  console.log(hero);
-  return <></>;
+const Hero = (hero: IHeroData) => {
+  return (
+    <>
+      <h1>{hero.heroData.title}</h1>
+    </>
+  );
 };
 
 export async function getStaticProps() {
@@ -32,7 +36,8 @@ export async function getStaticProps() {
 
   return {
     props: {
-      hero: response?.data ?? [],
+      heroData:
+        response?.data?.pagesTaxonomies?.edges[0]?.node?.heroes.nodes[0] ?? [],
     },
   };
 }
