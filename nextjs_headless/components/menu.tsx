@@ -13,13 +13,21 @@ const Menu = () => {
           </Link>
         </div>
         <ul className={styles.menuItems}>
-          <Link href='/nyheter-och-press'>Nyheter</Link>
-          <Link href='/tjanster'>Tjänster</Link>
-          <Link href='/team'>Team</Link>
+          <Link href='/nyheter-och-press'>
+            <div>Nyheter</div>
+          </Link>
+          <Link href='/tjanster'>
+            <div>Tjänster</div>
+          </Link>
+          <Link href='/team'>
+            <div>Team</div>
+          </Link>
           <li>Case</li>
           <li>Utbildningar</li>
           <li>Karriär</li>
-          <li>Partners</li>
+          <Link href='/partners'>
+            <div>Partners</div>
+          </Link>
           <li>Kontakt</li>
         </ul>
       </div>
