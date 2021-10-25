@@ -32,15 +32,15 @@ const GET_NEWSPAGE_DATA = gql`
   }
 `;
 
-const NewsPage: NextPage<IHeroData> = ({ heroData }) => {
+const NewsPage = (heroData: IHeroData) => {
+  console.log(heroData);
   return (
     <>
-      <Header heroData={heroData}></Header>
+      <Header heroData={heroData.heroData}></Header>
       <iframe
         id='mnd-iframe'
         width='100%'
         frameBorder='0'
-        allowTransparency
         scrolling='no'
         allow='autoplay; fullscreen'
         aria-label='Nyhetsrum: Avantime'
@@ -59,7 +59,7 @@ export async function getStaticProps() {
   return {
     props: {
       heroData:
-        response?.data?.pagesTaxonomies?.edges[0]?.node?.heroes.nodes[0] ?? [],
+        response?.data?.pagesTaxonomies?.edges[0]?.node?.heroes?.nodes[0] ?? [],
     },
   };
 }

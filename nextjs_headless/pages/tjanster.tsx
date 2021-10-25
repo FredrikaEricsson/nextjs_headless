@@ -1,11 +1,10 @@
 import { gql } from "@apollo/client";
 import React from "react";
 import { client } from "../lib/apolloClient";
-import TeamList from "../components/teamList";
 import Header from "../components/header";
-import styles from "../styles/Team.module.css";
+import ServicesList from "../components/servicesList";
 
-interface ITeamData {
+interface IServicesData {
   id: string;
   title: string;
   bodyText: string;
@@ -21,14 +20,14 @@ interface IHeroData {
   };
 }
 
-interface ITeamProps {
-  teamData: ITeamData[];
+interface IServicesProps {
+  servicesData: IServicesData[];
   heroData: IHeroData;
 }
 
-const GET_TEAMPAGE_DATA = gql`
-  query getTeamPageData {
-    pagesTaxonomies(where: { name: "TeamPage" }) {
+const GET_SERVICESPAGE_DATA = gql`
+  query getServicesPageData {
+    pagesTaxonomies(where: { name: "ServicesPage" }) {
       edges {
         node {
           infoCards {
@@ -55,25 +54,23 @@ const GET_TEAMPAGE_DATA = gql`
   }
 `;
 
-const TeamPage = ({ teamData, heroData }: ITeamProps) => {
+const ServicesPage = ({ servicesData, heroData }: IServicesProps) => {
   return (
     <>
       <Header heroData={heroData}></Header>
-      <div className={styles.pageWrapper}>
-        <TeamList teamData={teamData}></TeamList>
-      </div>
+      <ServicesList servicesData={servicesData}></ServicesList>
     </>
   );
 };
 
 export async function getStaticProps() {
   const response = await client.query({
-    query: GET_TEAMPAGE_DATA,
+    query: GET_SERVICESPAGE_DATA,
   });
 
   return {
     props: {
-      teamData:
+      servicesData:
         response?.data?.pagesTaxonomies?.edges[0]?.node?.infoCards?.nodes ?? [],
       heroData:
         response?.data?.pagesTaxonomies?.edges[0]?.node?.heroes.nodes[0] ?? [],
@@ -81,4 +78,4 @@ export async function getStaticProps() {
   };
 }
 
-export default TeamPage;
+export default ServicesPage;
