@@ -3,6 +3,7 @@ import React from "react";
 import { client } from "../lib/apolloClient";
 import Header from "../components/header";
 import ServicesList from "../components/servicesList";
+import styles from "../styles/Services.module.css";
 
 interface IServicesData {
   id: string;
@@ -58,7 +59,9 @@ const ServicesPage = ({ servicesData, heroData }: IServicesProps) => {
   return (
     <>
       <Header heroData={heroData}></Header>
-      <ServicesList servicesData={servicesData}></ServicesList>
+      <div className={styles.pageWrapper}>
+        <ServicesList servicesData={servicesData}></ServicesList>
+      </div>
     </>
   );
 };

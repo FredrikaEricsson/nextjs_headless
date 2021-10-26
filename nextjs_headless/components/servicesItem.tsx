@@ -1,3 +1,5 @@
+import styles from "../styles/Services.module.css";
+
 interface IServicesData {
   id: string;
   title: string;
@@ -15,10 +17,17 @@ const ServicesItem = ({ servicesItem }: IServicesDataProps) => {
   const regex = /(<([^>]+)>)/gi;
   return (
     <>
-      <h1>{servicesItem.title}</h1>
-      <span>{servicesItem.bodyText.replace(regex, "")}</span>
-
-      <img src={servicesItem.image.sourceUrl} alt='' />
+      <div className={styles.itemWrapper}>
+        <div className={styles.imageTitleWrapper}>
+          <div className={styles.imageWrapper}>
+            <img src={servicesItem.image.sourceUrl} alt='' />
+          </div>
+          <h3 className={styles.itemTitleWrapper}>{servicesItem.title}</h3>
+        </div>
+        <span className={styles.itemBodyText}>
+          {servicesItem.bodyText.replace(regex, "")}
+        </span>
+      </div>
     </>
   );
 };
