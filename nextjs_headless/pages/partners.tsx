@@ -3,6 +3,7 @@ import React from "react";
 import { client } from "../lib/apolloClient";
 import Header from "../components/header";
 import PartnersList from "../components/partnersList";
+import styles from "../styles/Partners.module.css";
 
 interface IPartnersData {
   id: string;
@@ -58,7 +59,9 @@ const PartnersPage = ({ partnersData, heroData }: IPartnersProps) => {
   return (
     <>
       <Header heroData={heroData}></Header>
-      <PartnersList partnersData={partnersData}></PartnersList>
+      <div className={styles.pageWrapper}>
+        <PartnersList partnersData={partnersData}></PartnersList>
+      </div>
     </>
   );
 };
