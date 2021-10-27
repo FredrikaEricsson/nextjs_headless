@@ -1,3 +1,5 @@
+import styles from "../styles/Partners.module.css";
+
 interface IPartnersData {
   id: string;
   title: string;
@@ -15,10 +17,13 @@ const PartnersItem = ({ partnersItem }: IPartnersDataProps) => {
   const regex = /(<([^>]+)>)/gi;
   return (
     <>
-      <h1>{partnersItem.title}</h1>
-      <span>{partnersItem.bodyText.replace(regex, "")}</span>
-
-      <img src={partnersItem.image.sourceUrl} alt='' />
+      <div className={styles.itemWrapper}>
+        <div className={styles.imageWrapper}>
+          <img src={partnersItem.image.sourceUrl} alt='' />
+        </div>
+        <h1>{partnersItem.title}</h1>
+        <span>{partnersItem.bodyText.replace(regex, "")}</span>
+      </div>
     </>
   );
 };
