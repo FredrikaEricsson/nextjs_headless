@@ -41,7 +41,7 @@ const GET_PARTNERSPAGE_DATA = gql`
               }
             }
           }
-          heroes {
+          smallHeroes {
             nodes {
               title
               heroImage {
@@ -76,7 +76,8 @@ export async function getStaticProps() {
       partnersData:
         response?.data?.pagesTaxonomies?.edges[0]?.node?.infoCards?.nodes ?? [],
       heroData:
-        response?.data?.pagesTaxonomies?.edges[0]?.node?.heroes.nodes[0] ?? [],
+        response?.data?.pagesTaxonomies?.edges[0]?.node?.smallHeroes.nodes[0] ??
+        [],
     },
   };
 }
