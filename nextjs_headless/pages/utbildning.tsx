@@ -18,6 +18,8 @@ interface IHeroData {
   heroImage: {
     sourceUrl: string;
   };
+  heading?: string;
+  subtitle?: string;
 }
 
 interface IEducationProps {
@@ -40,12 +42,14 @@ const GET_EDUCATIONPAGE_DATA = gql`
               }
             }
           }
-          heroes {
+          bigHeroes {
             nodes {
               title
               heroImage {
                 sourceUrl
               }
+              heading
+              subtitle
             }
           }
         }
@@ -73,7 +77,8 @@ export async function getStaticProps() {
       educationData:
         response?.data?.pagesTaxonomies?.edges[0]?.node?.infoCards?.nodes ?? [],
       heroData:
-        response?.data?.pagesTaxonomies?.edges[0]?.node?.heroes.nodes[0] ?? [],
+        response?.data?.pagesTaxonomies?.edges[0]?.node?.bigHeroes.nodes[0] ??
+        [],
     },
   };
 }

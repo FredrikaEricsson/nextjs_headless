@@ -18,7 +18,7 @@ const GET_NEWSPAGE_DATA = gql`
     pagesTaxonomies(where: { name: "NewsPage" }) {
       edges {
         node {
-          heroes {
+          smallHeroes {
             nodes {
               title
               heroImage {
@@ -59,7 +59,8 @@ export async function getStaticProps() {
   return {
     props: {
       heroData:
-        response?.data?.pagesTaxonomies?.edges[0]?.node?.heroes?.nodes[0] ?? [],
+        response?.data?.pagesTaxonomies?.edges[0]?.node?.smallHeroes
+          ?.nodes[0] ?? [],
     },
   };
 }

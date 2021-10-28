@@ -34,3 +34,59 @@
   height: 100%;
   object-fit: cover;
 }
+
+.educationHeaderWrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+.educationHeroTitleWrapper {
+  height: 85%;
+  width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.educationHeroTitle {
+  font-family: sans-serif;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.4px;
+  font-size: 60px;
+  color: #fff;
+}
+
+.educationHeroHeading {
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 2.6px;
+}
+
+.educationHeroSubTitle {
+  font-size: 26px;
+  color: #fff;
+  margin-top: 0px;
+}
+
+.educationHeroImageWrapper {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+}
+
+.educationHeroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.iconWrapper svg {
+  color: #ec5b55;
+  width: 70px !important;
+  height: 70px !important;
+}
