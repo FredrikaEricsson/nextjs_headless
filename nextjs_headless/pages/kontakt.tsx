@@ -3,6 +3,8 @@ import { client } from "../lib/apolloClient";
 import React from "react";
 import Header from "../components/header";
 import ContactList from "../components/contactList";
+import styles from "../styles/Contact.module.css";
+import ContactForm from "../components/contactForm";
 
 interface IContactCardData {
   id: string;
@@ -76,11 +78,18 @@ const GET_CONTACTPAGE_DATA = gql`
   }
 `;
 
-const ContactPage = ({ adressData, heroData }: IContactPageProps) => {
+const ContactPage = ({
+  adressData,
+  heroData,
+  contactCardData,
+}: IContactPageProps) => {
   return (
     <>
       <Header heroData={heroData} adressItems={adressData}></Header>
-      <ContactList></ContactList>
+      <div className={styles.contactPageWrapper}>
+        <ContactList contactCardData={contactCardData}></ContactList>
+        <ContactForm></ContactForm>
+      </div>
     </>
   );
 };
