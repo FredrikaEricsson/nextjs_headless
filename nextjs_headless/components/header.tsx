@@ -13,6 +13,8 @@ interface IHeroData {
   };
   heading?: string;
   subtitle?: string;
+  secondSubtitle?: string;
+  thirdSubtitle?: string;
 }
 
 interface IAdress {
@@ -22,11 +24,11 @@ interface IAdress {
 }
 
 interface IHeroDataProps {
-  heroData: IHeroData;
-  adresses?: IAdress[];
+  heroData?: IHeroData;
+  adressItems?: IAdress[];
 }
 
-const Header = ({ heroData }: IHeroDataProps) => {
+const Header = ({ heroData, adressItems }: IHeroDataProps) => {
   const router = useRouter();
   let route = router.route;
 
@@ -45,17 +47,30 @@ const Header = ({ heroData }: IHeroDataProps) => {
   }, []);
   const regex = /(<([^>]+)>)/gi;
 
+  let adressItem = adressItems
+    ?.slice()
+    .reverse()
+    .map((adressObject) => {
+      return (
+        <div className={styles.adressItem}>
+          <span>{adressObject.city}</span>
+          <span>{adressObject.adress}</span>
+          <span>{adressObject.zip}</span>
+        </div>
+      );
+    });
+
   return (
     <>
       {smallHero ? (
         <div className={styles.headerWrapper}>
           <Menu></Menu>
           <div className={styles.heroTitleWrapper}>
-            <h1 className={styles.heroTitle}>{heroData.title}</h1>
+            <h1 className={styles.heroTitle}>{heroData?.title}</h1>
           </div>
           <div className={styles.heroImageWrapper}>
             <img
-              src={heroData.heroImage.sourceUrl}
+              src={heroData?.heroImage.sourceUrl}
               alt=''
               className={styles.heroImage}
             />
@@ -66,9 +81,9 @@ const Header = ({ heroData }: IHeroDataProps) => {
         <div className={styles.educationHeaderWrapper}>
           <Menu></Menu>
           <div className={styles.educationHeroTitleWrapper}>
-            <h6 className={styles.educationHeroHeading}>{heroData.heading}</h6>
+            <h6 className={styles.educationHeroHeading}>{heroData?.heading}</h6>
 
-            <h1 className={styles.educationHeroTitle}>{heroData.title}</h1>
+            <h1 className={styles.educationHeroTitle}>{heroData?.title}</h1>
 
             <h4 className={styles.educationHeroSubTitle}>
               {heroData?.subtitle?.replace(regex, "")}
@@ -83,12 +98,39 @@ const Header = ({ heroData }: IHeroDataProps) => {
 
           <div className={styles.educationHeroImageWrapper}>
             <img
-              src={heroData.heroImage.sourceUrl}
+              src={heroData?.heroImage.sourceUrl}
               alt=''
               className={styles.educationHeroImage}
             />
           </div>
         </div>
+      ) : null}
+
+      {contactHero ? (
+        <>
+          <div className={styles.contactHeaderWrapper}>
+            <Menu></Menu>
+            <div className={styles.contactHeroTextWrapper}>
+              <h6 className={styles.contactHeroHeading}>{heroData?.heading}</h6>
+
+              <h1 className={styles.contactHeroTitle}>{heroData?.title}</h1>
+              <div className={styles.contactHeroSubTitles}>
+                <span>{heroData?.subtitle?.replace(regex, "")}</span>
+                <span>{heroData?.secondSubtitle?.replace(regex, "")}</span>
+                <span>{heroData?.thirdSubtitle?.replace(regex, "")}</span>
+              </div>
+            </div>
+
+            <div className={styles.contactHeroImageWrapper}>
+              <img
+                src={heroData?.heroImage.sourceUrl}
+                alt=''
+                className={styles.contactHeroImage}
+              />
+            </div>
+          </div>
+          <div className={styles.heroAdressWrapper}>{adressItem}</div>
+        </>
       ) : null}
     </>
   );

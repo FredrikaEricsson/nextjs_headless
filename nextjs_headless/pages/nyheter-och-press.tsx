@@ -1,5 +1,4 @@
 import { gql } from "@apollo/client";
-import { NextPage } from "next";
 import { client } from "../lib/apolloClient";
 import React from "react";
 import Header from "../components/header";

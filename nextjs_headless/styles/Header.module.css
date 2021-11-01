@@ -90,3 +90,92 @@
   width: 70px !important;
   height: 70px !important;
 }
+
+.contactHeaderWrapper {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactHeroTextWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 1140px;
+  height: 600px;
+  justify-self: center;
+  align-self: center;
+}
+
+.contactHeroHeading {
+  align-self: flex-start;
+  justify-self: flex-end;
+  font-size: 30px;
+  font-family: sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  color: #fff;
+  margin-block-start: 130px;
+  margin-block-end: 0px;
+}
+
+.contactHeroTitle {
+  align-self: center;
+  font-family: sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  font-size: 120px;
+  color: #fff;
+  margin-block-start: 30px;
+  margin-block-end: 30px;
+}
+
+.contactHeroSubTitles {
+  align-self: flex-end;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  font-size: 26px;
+  line-height: 1.6em;
+  color: #fff;
+  font-weight: 300;
+}
+
+.contactHeroImageWrapper {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background-color: #b2942d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactHeroImage {
+  width: 100%;
+  height: auto;
+}
+
+.heroAdressWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+  background-color: #b2942d;
+  padding-bottom: 100px;
+}
+
+.adressItem {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 150px;
+  font-weight: 300;
+  line-height: 32px;
+  letter-spacing: -0.4px;
+  font-size: 18px;
+  color: #fff;
+}

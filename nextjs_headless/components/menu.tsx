@@ -20,7 +20,7 @@ const Menu = () => {
           <Link href='/utbildning'>Utbildningar</Link>
           <li>Karriär</li>
           <Link href='/partners'>Partners</Link>
-          <li>Kontakt</li>
+          <Link href='/kontakt'>Kontakt</Link>
         </ul>
       </div>
     </>
