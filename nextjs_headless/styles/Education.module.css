@@ -1,0 +1,108 @@
+.eduPageWrapper {
+  width: 100vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.eduPageText {
+  width: 555px;
+  margin-bottom: 80px;
+}
+
+.eduPageText h1 {
+  font-size: 32px;
+  line-height: 1.1em;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-bottom: 0.5em;
+}
+
+.eduPageText h5 {
+  font-weight: 300;
+  line-height: 32px;
+  letter-spacing: -0.4px;
+  font-size: 18px;
+  margin-block-start: 0em;
+}
+.eduPageText span {
+  font-size: 1em;
+  line-height: 29px;
+  letter-spacing: -0.4px;
+  font-weight: 300;
+}
+
+.eduListContainer {
+  list-style: none;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-bottom: 2rem !important;
+  display: flex;
+  flex-wrap: wrap;
+  width: 1130px;
+  margin-top: 60px;
+  justify-content: center;
+}
+
+.eduList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 1170px;
+  justify-content: flex-start;
+
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+.eduItem {
+}
+
+.eduItemImageWrapper {
+  display: flex;
+  align-items: center;
+  width: 360px;
+  height: 400px;
+  box-shadow: inset 360px 400px rgb(0 0 0 / 35%);
+}
+
+.eduItemImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.eduItemImageHeadingWrapper  {
+  position: relative;
+}
+
+.eduItemTitleWrapper {
+  margin-top: -91px;
+  margin-left: 28px;
+  text-transform: uppercase;
+  color: white;
+  font-size: 8px;
+  font-weight: 100;
+  line-height: 32px;
+  letter-spacing: 0.5px;
+  width: 360px;
+  height: 100px;
+}
+
+.eduItemBodyText {
+  font-size: 1em;
+  line-height: 29px;
+  letter-spacing: -0.4px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
