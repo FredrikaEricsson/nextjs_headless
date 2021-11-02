@@ -3,6 +3,7 @@ import React from "react";
 import { client } from "../lib/apolloClient";
 import Header from "../components/header";
 import EducationList from "../components/educationList";
+import styles from "../styles/Education.module.css";
 
 interface IEducationData {
   id: string;
@@ -62,7 +63,9 @@ const EducationPage = ({ educationData, heroData }: IEducationProps) => {
   return (
     <>
       <Header heroData={heroData}></Header>
-      <EducationList educationData={educationData}></EducationList>
+      <div className={styles.eduPageWrapper}>
+        <EducationList educationData={educationData}></EducationList>
+      </div>
     </>
   );
 };
