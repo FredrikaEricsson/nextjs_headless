@@ -1,0 +1,30 @@
+.menuWrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 17px 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.menuItems {
+  display: flex;
+  width: 870px;
+  list-style: none;
+  justify-content: space-evenly;
+}
+
+.menuItems > * {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.menuItems a:hover {
+  text-decoration: underline #f77d5a 5px;
+  text-underline-offset: -3px;
+}
